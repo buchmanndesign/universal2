@@ -19,9 +19,9 @@ export class AppComponent implements OnInit {
       this.contentfulResults = res.items;
     });
 
-    this.dataService.getPostsPrismic().subscribe((res) => {
-      this.prismicResults = res.results;
-      console.log(res.results);
-    });
+    // this.dataService.getPostsPrismic().subscribe((res) => {
+    //   this.prismicResults = res.results;
+    //   console.log(res.results);
+    // });
   }
 }

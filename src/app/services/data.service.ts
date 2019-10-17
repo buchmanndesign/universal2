@@ -22,13 +22,13 @@ export class DataService {
     }));
   }
 
-  getPostsPrismic(): Observable<any> {
-    return from(prismic.getApi(this.apiEndpoint).then((api) => {
-      return api.query(
-        prismic.Predicates.at('document.type', 'post'),
-        { pageSize : 10 }
-      );
-    }));
+  // getPostsPrismic(): Observable<any> {
+  //   return from(prismic.getApi(this.apiEndpoint).then((api) => {
+  //     return api.query(
+  //       prismic.Predicates.at('document.type', 'post'),
+  //       { pageSize : 10 }
+  //     );
+  //   }));
 
-  }
+  // }
 }
