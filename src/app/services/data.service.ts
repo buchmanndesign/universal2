@@ -14,7 +14,7 @@ export class DataService {
     accessToken: 'm_0QXEpyWJPYxpEMulvOISGIwT-00iQ-GGWpCgT4-tU'
   });
 
-  apiEndpoint = 'https://jsbuchmannsite.prismic.io/api/v2';
+  // apiEndpoint = 'https://jsbuchmannsite.prismic.io/api/v2';
 
   getPostsContentful(): Observable<any> {
     return from(this.client.getEntries({
