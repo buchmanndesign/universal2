@@ -1,6 +1,8 @@
 import { Injectable, OnInit } from '@angular/core';
 import { from, Observable } from 'rxjs';
 // import * as prismic from 'Prismic-javascript';
+const Prismic = require('prismic-javascript');
+
 
 @Injectable({
   providedIn: 'root'
@@ -11,8 +13,15 @@ export class PrismicService {
 
   getPosts(): Observable<any> {
 
-    return from([1, 2, 3]);
+    return from(Prismic.getApi(this.apiEndpoint).then((api) => {
+      return api.query(
+        Prismic.Predicates.at('document.type', 'post'),
+        { pageSize : 10 }
+      ); // An empty query will return all the documents
+    }));
 
-
+    // return from(this.client.getEntries({
+    //   content_type: 'product'
+    // }));
   }
 }
