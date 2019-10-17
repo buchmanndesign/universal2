@@ -18,5 +18,10 @@ export class AppComponent implements OnInit {
     this.dataService.getPostsContentful().subscribe((res) => {
       this.contentfulResults = res.items;
     });
+
+    this.dataService.getPostsPrismic().subscribe((res) => {
+      this.prismicResults = res.results;
+      console.log(res.results);
+    });
   }
 }
