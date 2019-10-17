@@ -1,7 +1,6 @@
 import { Injectable, OnInit } from '@angular/core';
 import * as contentful from 'contentful';
 import { from, Observable } from 'rxjs';
-import * as prismic from 'Prismic-javascript';
 
 @Injectable({
   providedIn: 'root'
