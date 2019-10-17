@@ -1,6 +1,6 @@
 import { Injectable, OnInit } from '@angular/core';
 import { from, Observable } from 'rxjs';
-import * as prismic from 'Prismic-javascript';
+import * as prismic from 'prismic-javascript';
 // const Prismic = require('prismic-javascript');
 
 
