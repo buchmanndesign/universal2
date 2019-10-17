@@ -11,15 +11,8 @@ export class PrismicService {
 
   getPosts(): Observable<any> {
 
-    return from(prismic.getApi(this.apiEndpoint).then((api) => {
-      return api.query(
-        prismic.Predicates.at('document.type', 'post'),
-        { pageSize : 10 }
-      ); // An empty query will return all the documents
-    }));
+    return from([1, 2, 3]);
 
-    // return from(this.client.getEntries({
-    //   content_type: 'product'
-    // }));
+
   }
 }
