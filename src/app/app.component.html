@@ -1,5 +1,14 @@
 <ul>
-  <li *ngFor="let item of results">
+  <li *ngFor="let item of contentfulResults">
     {{ item.fields.productName }}
+  </li>
+</ul>
+
+<hr>
+
+<ul>
+  <li *ngFor="let item of prismicResults">
+    <p>{{ item.data.title[0].text }}</p>
+    <img src="{{ item.data.gallery[0].image1.url }}" alt="">
   </li>
 </ul>

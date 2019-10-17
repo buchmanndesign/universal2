@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import * as contentful from 'contentful';
 import { ContentfulService } from './services/contentful.service';
+import { PrismicService } from './services/prismic.service';
 
 @Component({
   selector: 'app-root',
@@ -9,13 +9,21 @@ import { ContentfulService } from './services/contentful.service';
 })
 export class AppComponent implements OnInit {
 
-  results;
+  contentfulResults;
+  prismicResults;
 
-  constructor(private contentfulService: ContentfulService) {}
+  constructor(
+    private contentfulService: ContentfulService,
+    private prismicService: PrismicService) {}
 
   ngOnInit(): void {
     this.contentfulService.getPosts().subscribe((res) => {
-      this.results = res.items;
-    })
+      this.contentfulResults = res.items;
+    });
+
+    this.prismicService.getPosts().subscribe((res) => {
+      this.prismicResults = res.results;
+      console.log(res.results)
+    });
   }
 }
