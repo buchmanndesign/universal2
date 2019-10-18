@@ -6,6 +6,15 @@
 
 <hr>
 
+<form (ngSubmit)="onSubmitSearch(f)" #f="ngForm">
+    <label for="">Type</label>
+    <input [(ngModel)]="type" name="type" type="text">
+    <hr>
+    <label for="">Fuel</label>
+    <input [(ngModel)]="fuel" name="fuel" type="text"><br>
+    <button>Go!</button>
+</form>
+
 <ul>
   <li *ngFor="let item of prismicResults">
     <p>{{ item.data.title[0].text }}</p>
