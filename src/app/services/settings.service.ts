@@ -24,7 +24,7 @@ export class SettingsService {
     );
   }
 
-  setSettings(): void {
+  setColors(): void {
     from(
       prismic.getApi(this.apiEndpoint).then((api) => {
       return api.query(
@@ -34,27 +34,14 @@ export class SettingsService {
     })
     ).subscribe((res) => {
       const settings =  res.results[0].data;
-      Object.keys(settings).forEach((prop) => {
+      Object.keys(settings).forEach((key) => {
         document.documentElement.style.setProperty(
-          prop,
-          settings[prop]
+          key,
+          settings[key]
         );
       })
     });
   }
-
-
-
-  // setActiveTheme(theme: Theme): void {
-  //   this.active = theme;
-
-  //   Object.keys(this.active.properties).forEach(property => {
-  //     document.documentElement.style.setProperty(
-  //       property,
-  //       this.active.properties[property]
-  //     );
-  //   });
-  // }
 
 
 

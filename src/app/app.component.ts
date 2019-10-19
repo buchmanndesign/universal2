@@ -10,7 +10,7 @@ import { SettingsService } from './services/settings.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit, AfterViewInit {
+export class AppComponent implements OnInit {
 
   contentfulResults;
   prismicResults;
@@ -39,18 +39,11 @@ export class AppComponent implements OnInit, AfterViewInit {
 
     });
 
-    // this.settingsService.getSettings().subscribe((res) => {
-    //   // console.log(res.results);
-    //   console.log('data:', res.results[0].data);
-    //   this.settings = res.results[0].data;
-    // })
 
-    this.settingsService.setSettings();
+    this.settingsService.setColors();
   }
 
-  ngAfterViewInit() {
-    this.styles = 'p { color: orange; }';
-  }
+
 
   onSubmitSearch(val?: NgForm) {
     console.log(this.type, this.fuel);
