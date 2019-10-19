@@ -27,7 +27,7 @@ export class PrismicService {
       prismic.getApi(this.apiEndpoint).then((api) => {
         return api.query([
           prismic.Predicates.at('document.type', 'post'),
-          type && prismic.Predicates.at('my.post.body_type', type),
+          type && prismic.Predicates.at('my.post.type', type),
           fuel && prismic.Predicates.at('my.post.fuel_types', fuel)
         ],
         { pageSize : 10 }
